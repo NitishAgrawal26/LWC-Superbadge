@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        This is My First HTML after Ages
+        <div id="div1" >
+            This is a div 1 tag
+        </div>
+        <div id ='div2'>
+            <button id="btn1" variant = "brand" label="Button Inside Dive2">button</button>
+        </div>
+        <div id ='div3'>
+            <button id="btn2"  variant = "brand" label='Button 3'>button inside div3</button>
+        </div>
+        
+        <script>
+        //My script
+        let div1 = document.querySelector("#div1");
+        let div2 = document.querySelector("#div2");
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        let body = document.querySelector("body");
+        btn1.addEventListener('click',function(e){
+            alert('initiating another event for the button 2');
+            console.log(e.target);
+            console.log(e.currentTarget);
+            e.stopPropagation();
+            /*showmessage = new CustomEvent('dummyclick', {detail:'Message to show'});
+            console.log(showmessage)
+            btn1.dispatchEvent(showmessage);*/
+        });
+        body.addEventListener('click',function(event){
+            console.log(event.target);
+            console.log(event.currentTarget);
+        })
+        </script>
+    </body>
+</html>
